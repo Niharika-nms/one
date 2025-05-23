@@ -1,21 +1,49 @@
-<html>
-<head>
-	<title>MyJavaAPP</title>
-</head>
-<body>
-	<h1 style="color: violet; font-size: 40px;" align="center">HEY WE DEPLOYED OUR APP USING JENKINS BY Niharika</h1>
-	<h1 style="color: red; font-size: 40px;" align="center">THIS IS APP DEPLOYMENT USING TOMCAT BY Niharika</h1>
-	<h1 style="color: green; font-size: 40px;" align="center">this is new vesion code</h1>
-	<h1 style="color: pink; font-size: 40px;" align="center">WE ARE SUCCESSFULLY DEPLOYED APPLICATION</h1>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <title>Calculater - By Sandeep Allakonda</title>
+    </head>a
+    <body>
+        <div class="calculater">
+            <div class="name">SANDEEP ALLAKONDA</div>
+            <input type="text" placeholder="0" id="inputBox">
+            <div>
+                <button class="operator">AC</button>
+                <button class="operator">DEL</button>
+                <button class="operator">%</button>
+                <button class="operator">/</button>
+            </div>
+            <div>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">*</button>
+            </div>
+            <div>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">-</button>
+            </div>
+            <div>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator">+</button>
+            </div>
+            <div>
+                <button>00</button>
+                <button>0</button>
+                <button>.</button>
+                <button class="equalBtn">=</button>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+
 </html>
