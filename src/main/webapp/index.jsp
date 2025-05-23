@@ -1,49 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html> 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Sandeep Clock</title>
         <link rel="stylesheet" href="style.css">
-        <title>Calculater - By Sandeep Allakonda</title>
-    </head>a
+    </head>
     <body>
-        <div class="calculater">
-            <div class="name">SANDEEP ALLAKONDA</div>
-            <input type="text" placeholder="0" id="inputBox">
-            <div>
-                <button class="operator">AC</button>
-                <button class="operator">DEL</button>
-                <button class="operator">%</button>
-                <button class="operator">/</button>
+        <div class="container">
+            <div class="clock">
+
+                <div class="circle" id="sc" style="--clr:#04fc43"><i></i></div>
+                <div class="circle circle2" id="mn" style="--clr:#fee800"><i></i></div>
+                <div class="circle circle3" id="hr" style="--clr:#ff2927"><i></i></div>                
+
+                <span style="--i:1;"><b>1</b></span>
+                <span style="--i:2;"><b>2</b></span>
+                <span style="--i:3;"><b>3</b></span>
+                <span style="--i:4;"><b>4</b></span>
+                <span style="--i:5;"><b>5</b></span>
+                <span style="--i:6;"><b>6</b></span>
+                <span style="--i:7;"><b>7</b></span>
+                <span style="--i:8;"><b>8</b></span>
+                <span style="--i:9;"><b>9</b></span>
+                <span style="--i:10;"><b>10</b></span>
+                <span style="--i:11;"><b>11</b></span>
+                <span style="--i:12;"><b>12</b></span>
+
             </div>
-            <div>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button class="operator">*</button>
+             
+            <!--digital clock-->
+
+            <div id="time">
+
+                <div id="hour" style="--clr:#ff2927">00</div>
+                <div id="minutes" style="--clr:#fee800">00</div>
+                <div id="seconds" style="--clr:#04fc43">00</div>
+                <div id="ampm">AM</div>
+
             </div>
-            <div>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button class="operator">-</button>
-            </div>
-            <div>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button class="operator">+</button>
-            </div>
-            <div>
-                <button>00</button>
-                <button>0</button>
-                <button>.</button>
-                <button class="equalBtn">=</button>
+            <div id="name">
+            <div id="Sandy">SANDEEP ALLAKONDA</div>
             </div>
         </div>
-        
-        <script src="script.js"></script>
-    </body>
 
+
+        <script>
+            let hr = document.querySelector('#hr');
+            let mn = document.querySelector('#mn');
+            let sc = document.querySelector('#sc');
+
+            setInterval(()=>{
+                let day = new Date();
+                let hh = day.getHours() * 30;   
+                let mm = day.getMinutes() * 6;
+                let ss = day.getSeconds() * 6;
+
+                hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+                mn.style.transform = `rotateZ(${mm}deg)`;
+                sc.style.transform = `rotateZ(${ss}deg)`;
+
+
+                //digital clock
+            let hours = document.getElementById('hour');
+            let minutes = document.getElementById('minutes');
+            let seconds = document.getElementById('seconds');
+            let ampm = document.getElementById('ampm');
+            
+            let h = new Date().getHours();
+            let m = new Date().getMinutes();
+            let s = new Date().getSeconds();
+
+            let am = h >= 12 ? "PM" : "AM";    
+
+            if (h > 12){
+                h = h - 12;
+            }
+
+        
+            h = (h < 10) ? "0" + h : h
+            m = (m < 10) ? "0" + m : m
+            s = (s < 10) ? "0" + s : s
+
+
+            hours.innerHTML = h;
+            minutes.innerHTML = m;
+            seconds.innerHTML = s;
+            ampm.innerHTML = am; 
+            })        
+           
+        </script>
+    </body>
 </html>
